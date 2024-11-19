@@ -15,7 +15,7 @@ model = load_model(MODEL_PATH)
 # Preprocessing function for uploaded images
 def preprocess_image(image_path):
     img = cv2.imread(image_path)
-    img = cv2.resize(img, (64, 64))  # Resize to match the model's input shape
+    img = cv2.resize(img, (128, 128))  # Resize to match the model's input shape
     b, g, r = cv2.split(img)
     img = cv2.merge([r, g, b])  # Convert BGR to RGB
     img = img / 255.0  # Normalize to [0, 1]
